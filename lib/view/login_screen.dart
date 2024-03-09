@@ -37,13 +37,13 @@ class _LoginState extends State<Login> {
               items: language
                   .map(
                     (e) => DropdownMenuItem<String>(
+                      value: e,
                       child: Text(
                         e,
                         style: const TextStyle(
                           fontSize: 16.0,
                         ),
                       ),
-                      value: e,
                     ),
                   )
                   .toList(),
@@ -78,7 +78,7 @@ class _LoginState extends State<Login> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  prefixIcon: Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.person),
                 ),
               ),
             ),
@@ -97,21 +97,21 @@ class _LoginState extends State<Login> {
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 10,top: 10,right: 20,left: 20),
-              child: Container(
+              child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.08,
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                       builder: (context) {
-                        return const MyHomePage();
+                        return const HomeScreen();
                       },
                     ));
                   },
-                  child: Text(AppLocalizations.of(context)!.login),
                   style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all(Size(150, 50)),
+                    minimumSize: MaterialStateProperty.all(const Size(150, 50)),
                   ),
+                  child: Text(AppLocalizations.of(context)!.login),
                 ),
               ),
             ),

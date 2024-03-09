@@ -1,4 +1,6 @@
+import 'package:animation/controller/icon_animation_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class IconAnim extends StatefulWidget {
   const IconAnim({Key? key}) : super(key: key);
@@ -8,13 +10,11 @@ class IconAnim extends StatefulWidget {
 }
 
 class _IconAnimState extends State<IconAnim> with TickerProviderStateMixin {
-  bool _isPlaying = false; // Renamed variable for better readability
-  late AnimationController _controller;
-
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
+    final iconProvider = Provider.of<IconAnimationProvider>(context, listen: false);
+    iconProvider.controller = AnimationController(
       duration: Duration(seconds: 1),
       vsync: this,
     );
@@ -22,7 +22,8 @@ class _IconAnimState extends State<IconAnim> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    _controller.dispose();
+    final iconProvider = Provider.of<IconAnimationProvider>(context, listen: false);
+    iconProvider.controller.dispose();
     super.dispose();
   }
 
@@ -30,30 +31,22 @@ class _IconAnimState extends State<IconAnim> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Icon Animation'), // Added an app bar for better UI
+        title: Text('Icon Animation'),
       ),
       body: Center(
-        child: GestureDetector(
-          onTap: _toggleAnimation, // Extracted method for better readability
-          child: AnimatedIcon(
-            progress: _controller,
-            size: 100,
-            icon: AnimatedIcons.add_event,
+        child: Consumer<IconAnimationProvider>(
+          builder: (context, value, child) => GestureDetector(
+            onTap: () {
+              value.toggleAnimation();
+            },
+            child: AnimatedIcon(
+              progress: value.controller,
+              size: 100,
+              icon: AnimatedIcons.add_event,
+            ),
           ),
         ),
       ),
     );
-  }
-
-  // Extracted method to handle the animation toggle
-  void _toggleAnimation() {
-    if (_isPlaying) {
-      _controller.reverse();
-    } else {
-      _controller.forward();
-    }
-    setState(() {
-      _isPlaying = !_isPlaying;
-    });
   }
 }

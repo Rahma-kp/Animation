@@ -2,33 +2,28 @@
 import 'package:animation/model/model.dart';
 import 'package:flutter/material.dart';
 
-class Detail extends StatefulWidget {
-  Detail({Key? key, required this.data}) : super(key: key);
+class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({super.key, required this.data});
   final DataModel data;
 
-  @override
-  State<Detail> createState() => _DetailState();
-}
-
-class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.data.name ?? "Detail"),
+        title: Text(data.name ?? "Detail"),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Hero(
-              tag: widget.data.id!,
+              tag: data.id!,
               child: Container(
-                height: 200, // Adjust the height as needed
+                height: 200, 
                 width: double.infinity,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(widget.data.image ?? ""),
+                    image: AssetImage(data.image ?? ""),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -40,24 +35,24 @@ class _DetailState extends State<Detail> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.data.name ?? "",
-                    style: TextStyle(
+                    data.name ?? "",
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Text(
+                  const SizedBox(height: 16),
+                  const Text(
                     "Description:",
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
-                    widget.data.description ?? "",
-                    style: TextStyle(
+                    data.description ?? "",
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                   ),

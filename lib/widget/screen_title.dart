@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ScreenTitle extends StatefulWidget {
   final String text;
-  const ScreenTitle({Key? key, required this.text}) : super(key: key);
+  const ScreenTitle({super.key, required this.text});
 
   @override
   State<ScreenTitle> createState() => _ScreenTitleState();
@@ -19,10 +19,10 @@ class _ScreenTitleState extends State<ScreenTitle> {
           child: child,
         );
       },
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       child: Text(
         widget.text,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 36,
           color: Colors.red,
         ),

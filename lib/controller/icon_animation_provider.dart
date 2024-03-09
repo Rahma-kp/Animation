@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class IconAnimationProvider extends ChangeNotifier{
-   bool _isPlaying = false; // Renamed variable for better readability
-  late AnimationController _controller;
+   bool isPlaying = false; 
+  late AnimationController controller;
 
-    void _toggleAnimation() {
-    if (_isPlaying) {
-      _controller.reverse();
+    toggleAnimation() {
+    if (isPlaying) {
+      controller.reverse();
     } else {
-      _controller.forward();
+      controller.forward(); 
     }
-      _isPlaying = !_isPlaying;
+      isPlaying = !isPlaying;
       notifyListeners();
   }
 }

@@ -2,7 +2,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 class TickerPro extends StatefulWidget {
-  const TickerPro({Key? key}) : super(key: key);
+  const TickerPro({super.key});
 
   @override
   State<TickerPro> createState() => _TickerProState();
@@ -11,7 +11,7 @@ class TickerPro extends StatefulWidget {
 class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: Duration(seconds: 10),
+    duration: const Duration(seconds: 10),
   )..repeat();
 
   @override
@@ -24,7 +24,7 @@ class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Ticker Pro'),
+        title: const Text('Ticker Pro'),
         centerTitle: true,
       ),
       body: Center(
@@ -44,7 +44,7 @@ class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
                           color: Colors.grey.withOpacity(0.5),
                           spreadRadius: 3,
                           blurRadius: 7,
-                          offset: Offset(0, 3),
+                          offset: const Offset(0, 3),
                         ),
                       ],
                     ),
@@ -60,8 +60,8 @@ class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
                 );
               },
             ),
-            SizedBox(height: 20.0),
-            Text(
+            const SizedBox(height: 20.0),
+            const Text(
               'Rotating Image',
               style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
             ),
