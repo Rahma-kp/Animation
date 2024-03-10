@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Physical extends StatelessWidget {
-  const Physical({Key? key}) : super(key: key);
+  const Physical({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Physical Model Example'),
+      appBar: AppBar(backgroundColor: Colors.black,
+        title: const Text('Physical Model',style: TextStyle(color: Colors.white),),
       ),
       body: Consumer<PhysicalProvider>( builder: (context, value, child) => 
         Center(
@@ -18,14 +18,14 @@ class Physical extends StatelessWidget {
             children: [
               AnimatedPhysicalModel(
                 shape: BoxShape.rectangle,
-                elevation: value.isElevated ? 6 : 0,
+                elevation: value.isElevated ? 8 : 0,
                 color: Colors.yellow,
-                shadowColor: Colors.black,
+                shadowColor: Colors.white,
                 duration: const Duration(milliseconds: 500),
                 child: const SizedBox(
-                  height: 120,
-                  width: 120,
-                  child: Icon(Icons.abc),
+                  height:200,
+                  width: 200,
+                  child: Icon(Icons.favorite_border,size: 30,),
                 ),
               ),
               const SizedBox(height: 20),

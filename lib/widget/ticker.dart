@@ -24,7 +24,11 @@ class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ticker Pro'),
+        backgroundColor: Colors.black,
+        title: const Text(
+          'Ticker Pro',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -41,7 +45,8 @@ class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
                       borderRadius: BorderRadius.circular(12.0),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
+                          color: const Color.fromARGB(255, 62, 62, 62)
+                              .withOpacity(0.5),
                           spreadRadius: 3,
                           blurRadius: 7,
                           offset: const Offset(0, 3),
@@ -51,9 +56,9 @@ class _TickerProState extends State<TickerPro> with TickerProviderStateMixin {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12.0),
                       child: Image.asset(
-                        'assets/wallpaperflare.com_wallpaper.jpg',
-                        height: 150.0,
-                        width: 150.0,
+                        'assets/rotating.jpg',
+                        height: 200.0,
+                        width: 200.0,
                       ),
                     ),
                   ),

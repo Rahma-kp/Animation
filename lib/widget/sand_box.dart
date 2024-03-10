@@ -15,8 +15,8 @@ class _SandboxState extends State<Sandbox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Animated Container Example'),
+      appBar: AppBar(backgroundColor: Colors.black,
+        title: const Text('Animated Container ',style: TextStyle(color:  Colors.white),),
       ),
       body: Consumer<SandBoxProvider>(builder: (context, value, child) => 
          Center(

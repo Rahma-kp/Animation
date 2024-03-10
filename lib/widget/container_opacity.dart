@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ConatinerOpac extends StatelessWidget {
-  const ConatinerOpac({Key? key}) : super(key: key);
+  const ConatinerOpac({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Opacity Animation'),
+      appBar: AppBar(backgroundColor: Colors.black,
+        title: const Text('Opacity Animation',style: TextStyle(color: Colors.white),),
       ),
       body: Consumer<ContainerOpacityProvider>(builder:(context, value, child) => 
         Center(
@@ -22,7 +22,7 @@ class ConatinerOpac extends StatelessWidget {
                 child: Container(
                   width: 150,
                   height: 150,
-                  color: Colors.blue, 
+                  color: Colors.red, 
                 ),
               ),
               const SizedBox(height: 20),

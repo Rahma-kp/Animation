@@ -9,8 +9,8 @@ class Slide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Animated Slide'),
-        backgroundColor: Colors.teal, 
+        title: const Text('Animated Slide',style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.black, 
       ),
       body: Consumer<TextSlideProvider>(builder: (context, value, child) => 
          Center(
@@ -23,7 +23,7 @@ class Slide extends StatelessWidget {
              width: double.infinity,
              height: 250,
              decoration: BoxDecoration(
-               color: Colors.amber,
+               color: const Color.fromARGB(255, 208, 93, 85),
                borderRadius: BorderRadius.circular(15.0), 
                boxShadow: [
                  BoxShadow(
@@ -41,7 +41,7 @@ class Slide extends StatelessWidget {
                child: const Padding(
                  padding: EdgeInsets.all(16.0),
                  child: Text(
-                   "Moving!",
+                   "Moving..!",
                    style: TextStyle(
                      fontSize: 24.0,
                      fontWeight: FontWeight.bold,

@@ -15,7 +15,7 @@ import 'package:shimmer/shimmer.dart';
 
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -82,8 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               padding: const EdgeInsets.all(10),
                               margin: const EdgeInsets.symmetric(
                                   vertical: 8, horizontal: 16),
-                              decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 211, 203, 203),
+                              decoration: BoxDecoration( 
+                                color:const Color.fromARGB(255, 74, 74, 74),
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
                                   color: const Color.fromARGB(255, 255, 255, 255),
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       style: const TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Color.fromARGB(255, 0, 0, 0),
+                                        color: Color.fromARGB(255, 255, 255, 255),
                                       ),
                                     ),
                                   ),
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("Slide"),
+                      child: const Text("Slide",style: TextStyle(color: Colors.black),),
                     ),
                     const SizedBox(width: 8),
                     TextButton(
@@ -147,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("Sandbox"),
+                      child: const Text("Sandbox",style: TextStyle(color: Colors.black),),
                     ),
                     const SizedBox(width: 8),
                     TextButton(
@@ -158,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("TickerPro"),
+                      child: const Text("TickerPro",style: TextStyle(color: Colors.black),),
                     ),
                     const SizedBox(width: 8),
                     TextButton(
@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("IconAnim"),
+                      child: const Text("IconAnim",style: TextStyle(color: Colors.black),),
                     ),
                     const SizedBox(width: 8),
                     TextButton(
@@ -180,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("Opacity"),
+                      child: const Text("Opacity",style: TextStyle(color: Colors.black),),
                     ),
                     const SizedBox(width: 8),
                     TextButton(
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("Physical"),
+                      child: const Text("Physical",style: TextStyle(color: Colors.black),),
                     ),
                     TextButton(
                       onPressed: () {
@@ -201,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           },
                         ));
                       },
-                      child: const Text("ConatinerOpac"),
+                      child: const Text("ConatinerOpac",style: TextStyle(color: Colors.black),),
                     ),
                   ],
                 ),

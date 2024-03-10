@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class IconAnim extends StatefulWidget {
-  const IconAnim({Key? key}) : super(key: key);
+  const IconAnim({super.key});
 
   @override
   _IconAnimState createState() => _IconAnimState();
@@ -15,7 +15,7 @@ class _IconAnimState extends State<IconAnim> with TickerProviderStateMixin {
     super.initState();
     final iconProvider = Provider.of<IconAnimationProvider>(context, listen: false);
     iconProvider.controller = AnimationController(
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       vsync: this,
     );
   }
@@ -30,8 +30,8 @@ class _IconAnimState extends State<IconAnim> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Icon Animation'),
+      appBar: AppBar(backgroundColor: Colors.black,
+        title: const Text('Icon Animation',style: TextStyle(color: Colors.white),),
       ),
       body: Center(
         child: Consumer<IconAnimationProvider>(

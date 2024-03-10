@@ -1,4 +1,3 @@
-
 import 'package:animation/controller/container_opacity_provider.dart';
 import 'package:animation/controller/home_screen_provider.dart';
 import 'package:animation/controller/icon_animation_provider.dart';
@@ -34,22 +33,37 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(providers: [ 
-      ChangeNotifierProvider(create: (context) => HomeScreenProvider(),),
-      ChangeNotifierProvider(create: (context) => SandBoxProvider(),),
-      ChangeNotifierProvider(create: (context) => TextOpacityprovider(),),
-      ChangeNotifierProvider(create: (context) => PhysicalProvider(),),
-      ChangeNotifierProvider(create: (context) => ContainerOpacityProvider(),),
-      ChangeNotifierProvider(create: (context) =>TextSlideProvider(),),
-      ChangeNotifierProvider(create:  (context) => IconAnimationProvider(),)],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => HomeScreenProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SandBoxProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TextOpacityprovider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => PhysicalProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ContainerOpacityProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => TextSlideProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => IconAnimationProvider(),
+        )
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
         ),
         localizationsDelegates: AppLocalizations.localizationsDelegates,

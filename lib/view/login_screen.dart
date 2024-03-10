@@ -3,14 +3,11 @@ import 'package:animation/view/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Login extends StatelessWidget {
+ Login({super.key});
 
-  @override
-  State<Login> createState() => _LoginState();
-}
+  final _formKey = GlobalKey<FormState>();
 
-class _LoginState extends State<Login> {
   final language = ['en', 'ml', 'hi'];
 
   @override
@@ -58,64 +55,85 @@ class _LoginState extends State<Login> {
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset(
-                'assets/bg.png',
-                height: 250.0,
-                width:250,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10,top: 10,right: 20,left: 20),
-              child: TextFormField(
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.username,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  prefixIcon: const Icon(Icons.person),
+        child: Form(
+          key: _formKey,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset(
+                  'assets/bg.png',
+                  height: 250.0,
+                  width: 250,
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10,top: 10,right: 20,left: 20),
-              child: TextFormField(
-                textAlign: TextAlign.center,
-                decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.password,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+              Padding(
+                padding: const EdgeInsets.only(
+                    bottom: 10, top: 10, right: 20, left: 20),
+                child: TextFormField(
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    hintText: AppLocalizations.of(context)!.username,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    prefixIcon: const Icon(Icons.person),
                   ),
-                  prefixIcon: const Icon(Icons.lock),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10,top: 10,right: 20,left: 20),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height * 0.08,
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) {
-                        return const HomeScreen();
-                      },
-                    ));
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your Name';
+                    }
+                    return null;
                   },
-                  style: ButtonStyle(
-                    minimumSize: MaterialStateProperty.all(const Size(150, 50)),
-                  ),
-                  child: Text(AppLocalizations.of(context)!.login),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(
+                    bottom: 10, top: 10, right: 20, left: 20),
+                child: TextFormField(
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    hintText: AppLocalizations.of(context)!.password,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    prefixIcon: const Icon(Icons.lock),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your Password';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    bottom: 10, top: 10, right: 20, left: 20),
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.08,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) {
+                            return const HomeScreen();
+                          },
+                        ));
+                      }
+                    },
+                    style: ButtonStyle(
+                      minimumSize:
+                          MaterialStateProperty.all(const Size(150, 50)),
+                    ),
+                    child: Text(AppLocalizations.of(context)!.login),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

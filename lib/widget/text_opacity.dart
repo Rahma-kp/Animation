@@ -8,8 +8,8 @@ class OpacityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Opacity Animation'),
+      appBar: AppBar(backgroundColor: Colors.black,
+        title: const Text('Opacity Animation',style: TextStyle(color: Colors.white),),
       ),
       body: Consumer<TextOpacityprovider>(builder: (context, value, child) => 
          Center(
@@ -20,9 +20,9 @@ class OpacityPage extends StatelessWidget {
                 duration: const Duration(seconds: 2),
                 opacity:value. opacityLevel,
                 child: const Text(
-                  "Opacity",
+                  "Rahma",
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -32,7 +32,7 @@ class OpacityPage extends StatelessWidget {
                 onPressed: () {
                   value.textopacitychange();
                 },
-                child: const Text("Toggle Opacity"),
+                child: const Text("Toggle Opacity",style: TextStyle(color: Colors.black),),
               ),
             ],
           ),
