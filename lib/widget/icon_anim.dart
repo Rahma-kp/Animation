@@ -2,14 +2,14 @@ import 'package:animation/controller/icon_animation_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class IconAnim extends StatefulWidget {
-  const IconAnim({super.key});
+class IconAnimation extends StatefulWidget {
+  const IconAnimation({super.key});
 
   @override
-  _IconAnimState createState() => _IconAnimState();
+  _IconAnimationState createState() => _IconAnimationState();
 }
 
-class _IconAnimState extends State<IconAnim> with TickerProviderStateMixin {
+class _IconAnimationState extends State<IconAnimation> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();

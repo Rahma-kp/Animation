@@ -2,8 +2,8 @@ import 'package:animation/controller/container_opacity_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class ConatinerOpac extends StatelessWidget {
-  const ConatinerOpac({super.key});
+class ConatinerOpacity extends StatelessWidget {
+  const ConatinerOpacity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ConatinerOpac extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                 value.opacitychange();
+                 value.opacityChange();
                 },
                 child: const Text("Toggle Opacity"),
               ),

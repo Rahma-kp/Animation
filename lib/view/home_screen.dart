@@ -1,7 +1,7 @@
 
 import 'package:animation/constant/data.dart';
 import 'package:animation/controller/home_screen_provider.dart';
-import 'package:animation/view/det.dart';
+import 'package:animation/view/details_screen.dart';
 import 'package:animation/widget/container_opacity.dart';
 import 'package:animation/widget/icon_anim.dart';
 import 'package:animation/widget/text_opacity.dart';
@@ -9,6 +9,7 @@ import 'package:animation/widget/physical.dart';
 import 'package:animation/widget/sand_box.dart';
 import 'package:animation/widget/text_slide.dart';
 import 'package:animation/widget/ticker.dart';
+import 'package:animation/widget/togle_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
       final pro=Provider.of<HomeScreenProvider>(context,listen: false);
-      pro.islodingchange();
+      pro.isLodingChange();
     });
   }
 
@@ -132,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) {
-                            return const Slide();
+                            return const SlideScreen();
                           },
                         ));
                       },
@@ -143,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) {
-                            return const Sandbox();
+                            return const SandBoxScreen();
                           },
                         ));
                       },
@@ -165,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) {
-                            return const IconAnim();
+                            return const IconAnimation();
                           },
                         ));
                       },
@@ -197,7 +198,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) {
-                            return const ConatinerOpac();
+                            return const ConatinerOpacity();
+                          },
+                        ));
+                      },
+                      child: const Text("ConatinerOpac",style: TextStyle(color: Colors.black),),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) {
+                            return const ButtonAnimation();
                           },
                         ));
                       },

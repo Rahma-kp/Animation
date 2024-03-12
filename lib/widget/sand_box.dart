@@ -2,14 +2,14 @@ import 'package:animation/controller/sandbox_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Sandbox extends StatefulWidget {
-  const Sandbox({super.key});
+class SandBoxScreen extends StatefulWidget {
+  const SandBoxScreen({super.key});
 
   @override
-  State<Sandbox> createState() => _SandboxState();
+  State<SandBoxScreen> createState() => _SandBoxScreenState();
 }
 
-class _SandboxState extends State<Sandbox> {
+class _SandBoxScreenState extends State<SandBoxScreen> {
 
 
   @override
@@ -30,7 +30,7 @@ class _SandboxState extends State<Sandbox> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                 value.sandboxchange();
+                 value.sandBoxChange();
                   },
                   child: const Text(
                     "Animate",

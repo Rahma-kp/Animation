@@ -1,3 +1,4 @@
+import 'package:animation/controller/button_contoller.dart';
 import 'package:animation/controller/container_opacity_provider.dart';
 import 'package:animation/controller/home_screen_provider.dart';
 import 'package:animation/controller/icon_animation_provider.dart';
@@ -6,6 +7,7 @@ import 'package:animation/controller/sandbox_provider.dart';
 import 'package:animation/controller/text_opacity_provider.dart';
 import 'package:animation/controller/text_slide_provider.dart';
 import 'package:animation/view/login_screen.dart';
+import 'package:animation/widget/togle_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -37,7 +39,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
+        ChangeNotifierProvider( 
           create: (context) => HomeScreenProvider(),
         ),
         ChangeNotifierProvider(
@@ -57,6 +59,9 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider(
           create: (context) => IconAnimationProvider(),
+        ),
+         ChangeNotifierProvider(
+          create: (context) => ButtonProider(),
         )
       ],
       child: MaterialApp(
@@ -69,8 +74,7 @@ class _MyAppState extends State<MyApp> {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         locale: _locale,
-        home: Login(),
-      ),
+        home: ButtonAnimation())
     );
   }
 }

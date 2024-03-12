@@ -30,7 +30,7 @@ class OpacityPage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  value.textopacitychange();
+                  value.textOpacityChange();
                 },
                 child: const Text("Toggle Opacity",style: TextStyle(color: Colors.black),),
               ),

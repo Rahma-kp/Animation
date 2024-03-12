@@ -31,7 +31,7 @@ class Physical extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                 value.physicalchange();
+                 value.physicalChange();
                 },
                 child: Text(value.isElevated ? 'Lower' : 'Elevate'),
               ),

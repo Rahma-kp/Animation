@@ -5,7 +5,7 @@ class SandBoxProvider extends ChangeNotifier {
   double margin = 0;
   double width = 200;
   Color color = Colors.black;
-  void sandboxchange() {
+  void sandBoxChange() {
     margin = 50;
     color = Colors.blue;
     notifyListeners();

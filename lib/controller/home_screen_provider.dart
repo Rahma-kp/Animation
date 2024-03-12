@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class HomeScreenProvider extends ChangeNotifier{
     bool isLoading = true;
-     void islodingchange(){
+     void isLodingChange(){
        isLoading = false;
        notifyListeners();
      }
